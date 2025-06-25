@@ -1,0 +1,46 @@
+@@My Article
+// <- punctuation.special
+//  ^ title
+
+@programming
+// <- punctuation.special
+//^ tag
+
+# Introduction
+// <- punctuation.special
+//^ title
+
+This is a **bold** text with *italic* and ***bold italic*** formatting.
+//            ^ punctuation.special
+//                       ^ punctuation.special
+//                                  ^ punctuation.special
+
+Here's some `inline code` with formatting.
+//          ^ punctuation.special
+//                      ^ punctuation.special
+
+MyLabel:
+//     ^ punctuation.delimiter
+// <- label
+
+- First item in list
+// <- punctuation.special
+- Second item with [link text](https://example.com)
+//                 ^ punctuation.bracket
+//                           ^ punctuation.bracket
+//                            ^ string.special.url
+
+1. Ordered list item
+// <- punctuation.special
+
+```python
+// <- punctuation.special
+print("Hello, World!")
+```
+// <- punctuation.special
+
+$$
+// <- punctuation.special
+\int_0^1 x^2 dx
+$$
+// <- punctuation.special
