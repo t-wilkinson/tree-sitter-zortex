@@ -158,6 +158,14 @@ This grammar has **3 link styles**:
 2. **Subpath**: `[Article/#Heading]`, `[Article/:Label]`, `[/LocalHeading]`
 3. **Markdown URL**: `[text](url)`
 
+**It has 3 link scopes**:
+
+1. **Local**: `[/...]`
+2. **Article**: `[Article name]`
+3. **Global**: `[:Label]`, `[-List]`, `[#Header]`, `[*Bold]`, `[@Tag]`, `[%Text]`
+
+The sections in the global scope can be chained together with `/` for more specific matching.
+
 ```bnf
 link ::= "[" link_text "]"
        | "[" link_text "]" "(" url ")"
