@@ -1,0 +1,57 @@
+==================
+Links
+==================
+@@Article
+
+[Article Name]
+[Article/#Heading]
+[Article/:Label]
+[/#Local Heading]
+[:Global Label]
+[Link text](https://example.com)
+---
+
+(document
+  (article_headers
+    (article_header
+      (article_name)))
+  (body
+    (block
+      (paragraph
+        (paragraph_line
+          (link
+            (zortex_link
+              (link_text))))))
+    (block
+      (paragraph
+        (paragraph_line
+          (link
+            (zortex_link
+              (link_text))))))
+    (block
+      (paragraph
+        (paragraph_line
+          (link
+            (zortex_link
+              (link_text))))))
+    (block
+      (paragraph
+        (paragraph_line
+          (link
+            (zortex_link
+              (link_text))))))
+    (block
+      (paragraph
+        (paragraph_line
+          (link
+            (zortex_link
+              (link_text))))))
+    (block
+      (paragraph
+        (paragraph_line
+          (link
+            (markdown_link
+              (link_text)
+              (url))))))))
+
+

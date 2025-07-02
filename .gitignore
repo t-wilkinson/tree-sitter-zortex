@@ -1,40 +1,35 @@
-# Rust artifacts
-target/
+# Dependencies
+node_modules/
+package-lock.json
 
-# Node artifacts
+# Generated files
+src/parser.c
+src/tree_sitter/
+binding.gyp
 build/
 prebuilds/
-node_modules/
 
-# Swift artifacts
-.build/
-
-# Go artifacts
-_obj/
-
-# Python artifacts
-.venv/
-dist/
-*.egg-info
-*.whl
-
-# C artifacts
-*.a
+# Compilation
+*.o
 *.so
-*.so.*
 *.dylib
 *.dll
-*.pc
+compile_commands.json
 
-# Example dirs
-/examples/*/
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 
-# Grammar volatiles
-*.wasm
-*.obj
-*.o
+# OS files
+.DS_Store
+Thumbs.db
 
-# Archives
-*.tar.gz
-*.tgz
-*.zip
+# Test output
+*.log
+
+# WASM output
+tree-sitter-zortex.wasm
+tree-sitter-zortex.d.ts

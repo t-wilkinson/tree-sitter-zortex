@@ -1,111 +1,181 @@
 module.exports = grammar({
   name: "zortex",
-  /* -------------------------------- Extras -------------------------------- */
-  extras: ($) => [/[ \t\f\r]+/],
-  /* --------------------------- Precedence helpers ------------------------- */
+
+  externals: ($) => [$.indent, $.dedent, $._newline_token, $._eof],
+
+  extras: ($) => [/[ \t\f\r]/],
+
   precedences: ($) => [
-    ["special_line", "paragraph"],
-    ["list", "paragraph"],
+    ["heading", "label", "list", "paragraph"],
+    ["bolditalic", "bold", "italic", "text"],
   ],
-  /* ------------------------------- Conflicts ------------------------------ */
-  conflicts: ($) => [[$.list, $.paragraph]],
-  /* ------------------------------ Top‑level ------------------------------- */
+
+  conflicts: ($) => [
+    [$.paragraph, $.list],
+    [$._inline_content, $.text],
+  ],
+
   rules: {
     document: ($) =>
-      seq(repeat1($.article_header), repeat($.tag_line), repeat($.block)),
+      seq(
+        $.article_headers,
+        optional($.tags),
+        // optional($._blank_lines),
+        optional($.body),
+      ),
 
-    /* ------------------------- Structural lines --------------------------- */
-    article_header: ($) => seq("@@", field("name", $.line_content), "\n"),
+    article_headers: ($) => repeat1($.article_header),
 
-    tag_line: ($) => seq("@", field("name", $.line_content), "\n"),
+    article_header: ($) => seq("@@", $.article_name, $._line_ending),
 
-    /* ---------------------------- Body blocks ----------------------------- */
+    article_name: ($) => /[^\n]+/,
+
+    tags: ($) => repeat1($.tag_line),
+
+    tag_line: ($) => seq("@", $.tag_name, $._line_ending),
+
+    tag_name: ($) => /[^\s\n]+/,
+
+    _blank_lines: ($) => repeat1($._blank_line),
+    _blank_line: ($) => /\n/,
+
+    body: ($) => repeat1($.block),
+
     block: ($) =>
       choice(
-        $.blank_line,
+        $.heading,
+        $.label,
         $.list,
         $.code_block,
         $.latex_block,
-        $.heading,
-        $.label,
         $.paragraph,
+        $._blank_line,
       ),
 
-    /* Headings */
+    // Headings
     heading: ($) =>
-      seq(
-        field("marker", $.heading_marker),
-        field("text", $.line_content),
-        "\n",
+      prec.left(
+        "heading",
+        seq($.heading_marker, " ", $.heading_content, $._line_ending),
       ),
-    heading_marker: ($) => token(/#{1,6}/),
 
-    /* Labels (must be a standalone line ending right after the colon) */
-    label: ($) => seq(field("name", $.label_name), token(":"), "\n"),
-    label_name: ($) => /[A-Za-z0-9 ][A-Za-z0-9 ]*/,
+    heading_marker: ($) => /#{1,6}/,
+    heading_content: ($) => repeat1($._inline),
 
-    /* Lists */
-    list: ($) => prec.left("list", seq($.list_item, repeat($.list_item))),
-    list_item: ($) =>
-      seq(
-        field("marker", choice("-", $.ordered_marker)),
-        " ",
-        repeat1($._inline),
-        "\n",
-      ),
-    ordered_marker: ($) => /\d+\./,
+    // Labels
+    label: ($) => prec.left("label", seq($.label_name, ":", $._line_ending)),
 
-    /* Fenced code */
+    label_name: ($) => /[A-Za-z0-9][A-Za-z0-9 ]*/,
+
+    // Lists with indentation support
+    list: ($) =>
+      prec.left("list", repeat1(choice($.list_item, $.nested_list_item))),
+
+    list_item: ($) => seq($.list_marker, " ", $.list_content, $._line_ending),
+
+    nested_list_item: ($) => seq($.indent, $.list_item, $.dedent),
+
+    list_marker: ($) => choice("-", /\d+\./),
+
+    list_content: ($) => repeat1($._inline),
+
+    // Code blocks
     code_block: ($) =>
       seq(
         "```",
-        optional(field("language", /[A-Za-z0-9_-]+/)),
-        "\n",
-        field("content", repeat(choice($.code_line, "\n"))),
+        optional($.language),
+        $._line_ending,
+        optional($.code_content),
         "```",
+        $._line_ending,
       ),
-    code_line: ($) => /[^\n]+/,
 
-    /* Fenced LaTeX */
+    language: ($) => /[a-zA-Z0-9_+-]+/,
+    code_content: ($) => repeat1(choice($.code_line, $._blank_line)),
+    code_line: ($) => seq(/[^\n]+/, $._line_ending),
+
+    // LaTeX blocks
     latex_block: ($) =>
       seq(
         "$$",
-        "\n",
-        field("content", repeat(choice($.code_line, "\n"))),
+        $._line_ending,
+        optional($.latex_content),
         "$$",
+        $._line_ending,
       ),
 
-    /* Paragraph - constrained to not start with special characters */
+    latex_content: ($) => repeat1(choice($.latex_line, $._blank_line)),
+    latex_line: ($) => seq(/[^\n]+/, $._line_ending),
+
+    // Paragraphs
     paragraph: ($) =>
-      seq($.paragraph_start, repeat(seq($.paragraph_line, "\n")), "\n"),
-
-    // First line of paragraph - explicit token that excludes special starts
-    paragraph_start: ($) => token(prec(-1, /[^@#`$\-0-9\n][^\n]*/)),
-
-    // Additional paragraph lines
-    paragraph_line: ($) => token(prec(-1, /[^@#`$\-0-9\n][^\n]*/)),
-
-    /* ------------------------------ Inline ------------------------------- */
-    _inline: ($) =>
-      choice($.bolditalic, $.bold, $.italic, $.inline_code, $.link, $.text),
-    bolditalic: ($) => seq("***", repeat1($.text), "***"),
-    bold: ($) => seq("**", repeat1($.text), "**"),
-    italic: ($) => seq("*", repeat1($.text), "*"),
-    inline_code: ($) => seq("`", /[^`]+/, "`"),
-    link: ($) =>
-      seq(
-        "[",
-        field("text", /[^\]]+/),
-        "]",
-        optional(seq("(", field("url", /[^)]+/), ")")),
+      prec.left(
+        "paragraph",
+        seq(repeat1($.paragraph_line), choice($._blank_line, $._eof)),
       ),
 
-    /* ---------------------------- Terminals ----------------------------- */
-    text: ($) => /[^*`\n\[\]]+/,
-    line_content: ($) => /[^\n]+/,
-    blank_line: ($) => "\n",
+    paragraph_line: ($) => seq(repeat1($._inline), $._line_ending),
+
+    // Inline content
+    _inline: ($) =>
+      choice(
+        $.formatted_text,
+        $.inline_code,
+        $.inline_latex,
+        $.link,
+        $._inline_content,
+      ),
+
+    _inline_content: ($) => choice($.text, $._soft_line_break),
+
+    // Formatting
+    formatted_text: ($) => choice($.bolditalic, $.bold, $.italic),
+
+    bolditalic: ($) =>
+      prec.left("bolditalic", seq("***", repeat1($._inline_bolditalic), "***")),
+
+    bold: ($) => prec.left("bold", seq("**", repeat1($._inline_bold), "**")),
+
+    italic: ($) =>
+      prec.left("italic", seq("*", repeat1($._inline_italic), "*")),
+
+    _inline_bolditalic: ($) =>
+      choice($.inline_code, $.inline_latex, $.link, alias(/[^*\n]+/, $.text)),
+
+    _inline_bold: ($) =>
+      choice(
+        $.italic,
+        $.inline_code,
+        $.inline_latex,
+        $.link,
+        alias(/[^*\n]+/, $.text),
+      ),
+
+    _inline_italic: ($) =>
+      choice($.inline_code, $.inline_latex, $.link, alias(/[^*\n]+/, $.text)),
+
+    // Inline code
+    inline_code: ($) => seq("`", /[^`\n]+/, "`"),
+
+    // Inline LaTeX
+    inline_latex: ($) => seq("$", /[^$\n]+/, "$"),
+
+    // Links
+    link: ($) => choice($.zortex_link, $.markdown_link),
+
+    zortex_link: ($) => seq("[", $.link_text, "]"),
+
+    markdown_link: ($) => seq("[", $.link_text, "]", "(", $.url, ")"),
+
+    link_text: ($) => /[^\]]+/,
+    url: ($) => /[^)]+/,
+
+    // Text
+    text: ($) => token(prec(-1, /[^*`$\[\]\n]+/)),
+
+    _soft_line_break: ($) => " ",
+
+    // Line endings
+    _line_ending: ($) => choice("\n", $._newline_token, $._eof),
   },
 });
-/* NEXT STEPS --------------------------------------------------------------
- * – Add externals: $ => [ $.indent, $.dedent ] once indentation nesting is needed.
- */

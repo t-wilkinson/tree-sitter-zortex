@@ -2,21 +2,35 @@
   {
     "type": "article_header",
     "named": true,
-    "fields": {
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "line_content",
-            "named": true
-          }
-        ]
-      }
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "article_name",
+          "named": true
+        }
+      ]
     }
   },
   {
-    "type": "blank_line",
+    "type": "article_headers",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "article_header",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "article_name",
     "named": true,
     "fields": {}
   },
@@ -26,12 +40,8 @@
     "fields": {},
     "children": {
       "multiple": false,
-      "required": true,
+      "required": false,
       "types": [
-        {
-          "type": "blank_line",
-          "named": true
-        },
         {
           "type": "code_block",
           "named": true
@@ -60,6 +70,21 @@
     }
   },
   {
+    "type": "body",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "block",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "bold",
     "named": true,
     "fields": {},
@@ -68,216 +93,11 @@
       "required": true,
       "types": [
         {
-          "type": "text",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "bolditalic",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "text",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "code_block",
-    "named": true,
-    "fields": {
-      "content": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "\n",
-            "named": false
-          },
-          {
-            "type": "code_line",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "code_line",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "document",
-    "named": true,
-    "root": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "article_header",
-          "named": true
-        },
-        {
-          "type": "block",
-          "named": true
-        },
-        {
-          "type": "tag_line",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "heading",
-    "named": true,
-    "fields": {
-      "marker": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "heading_marker",
-            "named": true
-          }
-        ]
-      },
-      "text": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "line_content",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "inline_code",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "italic",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "text",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "label",
-    "named": true,
-    "fields": {
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "label_name",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "latex_block",
-    "named": true,
-    "fields": {
-      "content": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "\n",
-            "named": false
-          },
-          {
-            "type": "code_line",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "line_content",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "link",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "list",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "list_item",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "list_item",
-    "named": true,
-    "fields": {
-      "marker": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "-",
-            "named": false
-          },
-          {
-            "type": "ordered_marker",
-            "named": true
-          }
-        ]
-      }
-    },
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "bold",
-          "named": true
-        },
-        {
-          "type": "bolditalic",
-          "named": true
-        },
-        {
           "type": "inline_code",
+          "named": true
+        },
+        {
+          "type": "inline_latex",
           "named": true
         },
         {
@@ -296,6 +116,391 @@
     }
   },
   {
+    "type": "bolditalic",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "inline_code",
+          "named": true
+        },
+        {
+          "type": "inline_latex",
+          "named": true
+        },
+        {
+          "type": "link",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "code_block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "code_content",
+          "named": true
+        },
+        {
+          "type": "language",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "code_content",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "code_line",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "code_line",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "document",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "article_headers",
+          "named": true
+        },
+        {
+          "type": "body",
+          "named": true
+        },
+        {
+          "type": "tags",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "formatted_text",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "bold",
+          "named": true
+        },
+        {
+          "type": "bolditalic",
+          "named": true
+        },
+        {
+          "type": "italic",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "heading",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "heading_content",
+          "named": true
+        },
+        {
+          "type": "heading_marker",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "heading_content",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "formatted_text",
+          "named": true
+        },
+        {
+          "type": "inline_code",
+          "named": true
+        },
+        {
+          "type": "inline_latex",
+          "named": true
+        },
+        {
+          "type": "link",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "inline_code",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "inline_latex",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "italic",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "inline_code",
+          "named": true
+        },
+        {
+          "type": "inline_latex",
+          "named": true
+        },
+        {
+          "type": "link",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "label",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "label_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "latex_block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "latex_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "latex_content",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "latex_line",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "latex_line",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "link",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "markdown_link",
+          "named": true
+        },
+        {
+          "type": "zortex_link",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "list_item",
+          "named": true
+        },
+        {
+          "type": "nested_list_item",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_content",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "formatted_text",
+          "named": true
+        },
+        {
+          "type": "inline_code",
+          "named": true
+        },
+        {
+          "type": "inline_latex",
+          "named": true
+        },
+        {
+          "type": "link",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_item",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "list_content",
+          "named": true
+        },
+        {
+          "type": "list_marker",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_marker",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "markdown_link",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "link_text",
+          "named": true
+        },
+        {
+          "type": "url",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "nested_list_item",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "dedent",
+          "named": true
+        },
+        {
+          "type": "indent",
+          "named": true
+        },
+        {
+          "type": "list_item",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "paragraph",
     "named": true,
     "fields": {},
@@ -306,10 +511,6 @@
         {
           "type": "paragraph_line",
           "named": true
-        },
-        {
-          "type": "paragraph_start",
-          "named": true
         }
       ]
     }
@@ -317,27 +518,77 @@
   {
     "type": "paragraph_line",
     "named": true,
-    "fields": {}
-  },
-  {
-    "type": "paragraph_start",
-    "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "formatted_text",
+          "named": true
+        },
+        {
+          "type": "inline_code",
+          "named": true
+        },
+        {
+          "type": "inline_latex",
+          "named": true
+        },
+        {
+          "type": "link",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "tag_line",
     "named": true,
-    "fields": {
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "line_content",
-            "named": true
-          }
-        ]
-      }
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tag_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tags",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "tag_line",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "zortex_link",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "link_text",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -346,6 +597,10 @@
   },
   {
     "type": " ",
+    "named": false
+  },
+  {
+    "type": "$",
     "named": false
   },
   {
@@ -405,7 +660,15 @@
     "named": false
   },
   {
+    "type": "dedent",
+    "named": true
+  },
+  {
     "type": "heading_marker",
+    "named": true
+  },
+  {
+    "type": "indent",
     "named": true
   },
   {
@@ -413,11 +676,23 @@
     "named": true
   },
   {
-    "type": "ordered_marker",
+    "type": "language",
+    "named": true
+  },
+  {
+    "type": "link_text",
+    "named": true
+  },
+  {
+    "type": "tag_name",
     "named": true
   },
   {
     "type": "text",
+    "named": true
+  },
+  {
+    "type": "url",
     "named": true
   }
 ]

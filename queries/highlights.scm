@@ -1,50 +1,86 @@
-; Structural markers
-"@@" @punctuation.special
-"@" @punctuation.special
+; Article headers - bright/special color
+(article_header
+  "@@" @keyword.directive
+  (article_name) @title)
 
-; Article and tag headers
-(article_header name: (line_content) @title)
-(tag_line name: (line_content) @tag)
+; Tags - different color than headers
+(tag_line
+  "@" @tag.delimiter
+  (tag_name) @tag)
 
-; Headings
-(heading_marker) @punctuation.special
-(heading text: (line_content) @title)
+; Headings - graduated colors
+(heading
+  (heading_marker) @punctuation.special
+  (heading_content) @text.title)
 
-; Labels
-(label name: (label_name) @label)
-":" @punctuation.delimiter
+; Differentiate heading levels
+((heading_marker) @text.title.1 (#eq? @text.title.1 "#"))
+((heading_marker) @text.title.2 (#eq? @text.title.2 "##"))
+((heading_marker) @text.title.3 (#eq? @text.title.3 "###"))
+((heading_marker) @text.title.4 (#eq? @text.title.4 "####"))
+((heading_marker) @text.title.5 (#eq? @text.title.5 "#####"))
+((heading_marker) @text.title.6 (#eq? @text.title.6 "######"))
+
+; Labels - semantic identifier
+(label
+  (label_name) @label
+  ":" @punctuation.delimiter)
 
 ; Lists
-(list_item marker: "-" @punctuation.special)
-(ordered_marker) @punctuation.special
+(list_marker) @punctuation.special
 
-; Code blocks
-"```" @punctuation.special
-(code_block language: (language) @tag)
+; Formatting
+(bold) @text.strong
+(italic) @text.emphasis
+(bolditalic) @text.strong @text.emphasis
 
-; LaTeX blocks
-"$$" @punctuation.special
+; Code
+(inline_code) @text.literal
+(code_block
+  "```" @punctuation.delimiter
+  (language)? @label
+  (code_content)? @text.literal
+  "```" @punctuation.delimiter)
 
-; Inline formatting
-(bold "**" @punctuation.special)
-(italic "*" @punctuation.special)
-(bolditalic "***" @punctuation.special)
-
-; Inline code
-(inline_code "`" @punctuation.special)
+; LaTeX
+(inline_latex) @text.math
+(latex_block
+  "$$" @punctuation.delimiter
+  (latex_content)? @text.math
+  "$$" @punctuation.delimiter)
 
 ; Links
-(link "[" @punctuation.bracket)
-(link "]" @punctuation.bracket)
-(link "(" @punctuation.bracket)
-(link ")" @punctuation.bracket)
-(link text: (text) @string)
-(link url: (url) @string.special.url)
+(article_link
+  "[" @punctuation.bracket
+  (link_text) @text.reference
+  "]" @punctuation.bracket)
 
-; General text content
-(text) @string
-(line_content) @string
-(code_line) @string
+(subpath_link
+  "[" @punctuation.bracket
+  (link_text) @text.reference
+  "]" @punctuation.bracket)
 
-; Whitespace and structure
-(blank_line) @none
+(markdown_link
+  "[" @punctuation.bracket
+  (link_text) @text.reference
+  "]" @punctuation.bracket
+  "(" @punctuation.bracket
+  (url) @text.uri
+  ")" @punctuation.bracket)
+
+; Text
+(text) @text
+(paragraph) @text
+
+; Comments (if you add them later)
+; (comment) @comment
+
+; Special punctuation
+"**" @punctuation.delimiter
+"***" @punctuation.delimiter
+"*" @punctuation.delimiter
+"`" @punctuation.delimiter
+"$" @punctuation.delimiter
+
+; Errors
+(ERROR) @error

@@ -1,0 +1,300 @@
+==================
+Article Headers
+==================
+@@Article Name
+@tag1
+---
+
+(document
+  (article_headers
+    (article_header
+      (article_name)))
+  (tags
+    (tag_line
+      (tag_name))))
+
+==================
+Multiple Headers and Tags
+==================
+@@Main Title
+@@Alias Title
+@tag1
+@tag2
+@tag3
+---
+
+(document
+  (article_headers
+    (article_header
+      (article_name))
+    (article_header
+      (article_name)))
+  (tags
+    (tag_line
+      (tag_name))
+    (tag_line
+      (tag_name))
+    (tag_line
+      (tag_name))))
+
+==================
+Headings
+==================
+@@Article
+@tag
+
+# Heading 1
+## Heading 2
+### Heading 3
+---
+
+(document
+  (article_headers
+    (article_header
+      (article_name)))
+  (tags
+    (tag_line
+      (tag_name)))
+  (body
+    (block
+      (heading
+        (heading_marker)
+        (heading_content
+          (text))))
+    (block
+      (heading
+        (heading_marker)
+        (heading_content
+          (text))))
+    (block
+      (heading
+        (heading_marker)
+        (heading_content
+          (text))))))
+
+==================
+Labels
+==================
+@@Article
+@tag
+
+Introduction:
+Methodology:
+---
+
+(document
+  (article_headers
+    (article_header
+      (article_name)))
+  (tags
+    (tag_line
+      (tag_name)))
+  (body
+    (block
+      (label
+        (label_name)))
+    (block
+      (label
+        (label_name)))))
+
+==================
+Lists
+==================
+@@Article
+- Item 1
+- Item 2
+  - Nested item
+  - Another nested
+- Item 3
+
+1. First
+2. Second
+---
+
+(document
+  (article_headers
+    (article_header
+      (article_name)))
+  (body
+    (block
+      (list
+        (list_item
+          (list_marker)
+          (list_content
+            (text)))
+        (list_item
+          (list_marker)
+          (list_content
+            (text)))
+        (nested_list_item
+          (list_item
+            (list_marker)
+            (list_content
+              (text))))
+        (nested_list_item
+          (list_item
+            (list_marker)
+            (list_content
+              (text))))
+        (list_item
+          (list_marker)
+          (list_content
+            (text)))))
+    (block
+      (list
+        (list_item
+          (list_marker)
+          (list_content
+            (text)))
+        (list_item
+          (list_marker)
+          (list_content
+            (text)))))))
+
+==================
+Formatting
+==================
+@@Article
+
+This is **bold** text.
+This is *italic* text.
+This is ***bold italic*** text.
+---
+
+(document
+  (article_headers
+    (article_header
+      (article_name)))
+  (body
+    (block
+      (paragraph
+        (paragraph_line
+          (text)
+          (formatted_text
+            (bold
+              (text)))
+          (text))))
+    (block
+      (paragraph
+        (paragraph_line
+          (text)
+          (formatted_text
+            (italic
+              (text)))
+          (text))))
+    (block
+      (paragraph
+        (paragraph_line
+          (text)
+          (formatted_text
+            (bolditalic
+              (text)))
+          (text))))))
+
+==================
+Code Blocks
+==================
+@@Article
+
+```python
+def hello():
+    print("Hello World")
+```
+
+```
+Plain code block
+```
+---
+
+(document
+  (article_headers
+    (article_header
+      (article_name)))
+  (body
+    (block
+      (code_block
+        (language)
+        (code_content
+          (code_line)
+          (code_line))))
+    (block
+      (code_block
+        (code_content
+          (code_line))))))
+
+==================
+LaTeX
+==================
+@@Article
+
+Inline math: $a^2 + b^2 = c^2$
+
+Block math:
+
+$$
+\int_{0}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
+$$
+---
+
+(document
+  (article_headers
+    (article_header
+      (article_name)))
+  (body
+    (block
+      (paragraph
+        (paragraph_line
+          (text)
+          (inline_latex)
+          (text))))
+    (block
+      (paragraph
+        (paragraph_line
+          (text))))
+    (block
+      (latex_block
+        (latex_content
+          (latex_line))))))
+
+==================
+Complex Paragraph
+==================
+@@Article
+
+This paragraph has **bold**, *italic*, `code`, and [links]. It also has
+math like $x = y$ and continues on multiple lines with various
+***formatting*** options.
+---
+
+(document
+  (article_headers
+    (article_header
+      (article_name)))
+  (body
+    (block
+      (paragraph
+        (paragraph_line
+          (text)
+          (formatted_text
+            (bold
+              (text)))
+          (text)
+          (formatted_text
+            (italic
+              (text)))
+          (text)
+          (inline_code)
+          (text)
+          (link
+            (zortex_link
+              (link_text)))
+          (text))
+        (paragraph_line
+          (text)
+          (inline_latex)
+          (text))
+        (paragraph_line
+          (formatted_text
+            (bolditalic
+              (text)))
+          (text))))))

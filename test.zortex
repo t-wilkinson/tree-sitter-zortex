@@ -1,0 +1,112 @@
+@@Machine Learning Fundamentals
+@@ML Basics
+@artificial-intelligence
+@deep-learning
+@tutorial
+
+# Introduction to Machine Learning
+
+Machine learning is a subset of **artificial intelligence** that focuses on building systems that learn from data. Unlike traditional programming where we give specific instructions, ML systems ***learn patterns*** from examples.
+
+## Types of Machine Learning
+
+Supervised Learning:
+- Classification: Predicting discrete labels
+- Regression: Predicting continuous values
+  - Linear regression
+  - Polynomial regression
+    - Quadratic
+    - Cubic
+
+Unsupervised Learning:
+1. Clustering algorithms
+2. Dimensionality reduction
+   1. PCA (Principal Component Analysis)
+   2. t-SNE
+3. Anomaly detection
+
+## Mathematical Foundations
+
+The core equation for linear regression is $y = mx + b$, where:
+- $m$ is the slope
+- $b$ is the y-intercept
+
+For more complex models, we use matrix notation:
+
+$$
+\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}
+$$
+
+Where $\mathbf{X}$ is the design matrix and $\boldsymbol{\beta}$ contains parameters.
+
+### Code Example
+
+Here's a simple Python implementation:
+
+```python
+import numpy as np
+
+class LinearRegression:
+    def __init__(self):
+        self.weights = None
+        
+    def fit(self, X, y):
+        # Add bias term
+        X = np.c_[np.ones(X.shape[0]), X]
+        # Normal equation
+        self.weights = np.linalg.inv(X.T @ X) @ X.T @ y
+        
+    def predict(self, X):
+        X = np.c_[np.ones(X.shape[0]), X]
+        return X @ self.weights
+```
+
+## Links and References
+
+### Internal Links
+- See [Neural Networks] for deep learning
+- Check [Neural Networks/#Backpropagation] for training details
+- Review [Neural Networks/:Architecture] for network design
+- Jump to [/#Mathematical Foundations] above
+- Related to [:Supervised Learning] concept
+
+### External Resources
+- [scikit-learn documentation](https://scikit-learn.org)
+- [Deep Learning Book](http://www.deeplearningbook.org/)
+
+## Advanced Topics
+
+Gradient Descent:
+The update rule for gradient descent is:
+
+```
+θ = θ - α∇J(θ)
+```
+
+Where `α` is the learning rate and `∇J(θ)` is the gradient.
+
+### Performance Metrics
+
+Accuracy Metrics:
+- **Precision**: True Positives / (True Positives + False Positives)
+- **Recall**: True Positives / (True Positives + False Negatives)
+- *F1-Score*: Harmonic mean of precision and recall
+
+## Conclusion
+
+Machine learning is transforming how we solve problems. From [Computer Vision] to [Natural Language Processing], ML techniques are everywhere.
+
+Remember:
+1. Start with simple models
+2. Understand your data
+3. Iterate and improve
+
+> "The goal is to turn data into information, and information into insight." - Carly Fiorina
+
+@@Deep Learning Fundamentals
+@neural-networks
+@deep-learning
+
+# Deep Learning Overview
+
+Deep learning extends [Machine Learning Fundamentals] by using neural networks with multiple layers.
