@@ -4,8 +4,8 @@
       "name": "zortex",
       "camelcase": "Zortex",
       "scope": "source.zortex",
-      "file-types": [".zortex", ".zx"],
       "injection-regex": "^zortex$",
+      "file-types": ["zortex", "zx"],
       "highlights": "queries/highlights.scm",
       "locals": "queries/locals.scm",
       "injections": "queries/injections.scm"
@@ -35,4 +35,3 @@
     "swift": true
   }
 }
-
