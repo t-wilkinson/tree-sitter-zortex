@@ -30,16 +30,11 @@
     }
   },
   {
-    "type": "article_name",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "block",
+    "type": "body",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": false,
       "types": [
         {
@@ -51,7 +46,7 @@
           "named": true
         },
         {
-          "type": "label",
+          "type": "label_block",
           "named": true
         },
         {
@@ -59,26 +54,11 @@
           "named": true
         },
         {
-          "type": "list",
+          "type": "list_block",
           "named": true
         },
         {
-          "type": "paragraph",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "body",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "block",
+          "type": "paragraph_block",
           "named": true
         }
       ]
@@ -160,26 +140,6 @@
         }
       ]
     }
-  },
-  {
-    "type": "code_content",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "code_line",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "code_line",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "document",
@@ -316,19 +276,63 @@
     }
   },
   {
-    "type": "label",
+    "type": "label_block",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
-          "type": "label_name",
+          "type": "label_content",
+          "named": true
+        },
+        {
+          "type": "label_line",
           "named": true
         }
       ]
     }
+  },
+  {
+    "type": "label_content",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "code_block",
+          "named": true
+        },
+        {
+          "type": "dedent",
+          "named": true
+        },
+        {
+          "type": "indent",
+          "named": true
+        },
+        {
+          "type": "latex_block",
+          "named": true
+        },
+        {
+          "type": "list_block",
+          "named": true
+        },
+        {
+          "type": "paragraph_block",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "label_line",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "latex_block",
@@ -344,26 +348,6 @@
         }
       ]
     }
-  },
-  {
-    "type": "latex_content",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "latex_line",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "latex_line",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "link",
@@ -385,7 +369,7 @@
     }
   },
   {
-    "type": "list",
+    "type": "list_block",
     "named": true,
     "fields": {},
     "children": {
@@ -395,16 +379,43 @@
         {
           "type": "list_item",
           "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_item",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "dedent",
+          "named": true
         },
         {
-          "type": "nested_list_item",
+          "type": "indent",
+          "named": true
+        },
+        {
+          "type": "list_item_content",
+          "named": true
+        },
+        {
+          "type": "list_marker",
+          "named": true
+        },
+        {
+          "type": "list_nested_content",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "list_content",
+    "type": "list_item_content",
     "named": true,
     "fields": {},
     "children": {
@@ -435,28 +446,44 @@
     }
   },
   {
-    "type": "list_item",
+    "type": "list_marker",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "list_nested_content",
     "named": true,
     "fields": {},
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
-          "type": "list_content",
+          "type": "code_block",
           "named": true
         },
         {
-          "type": "list_marker",
+          "type": "heading",
+          "named": true
+        },
+        {
+          "type": "label_block",
+          "named": true
+        },
+        {
+          "type": "latex_block",
+          "named": true
+        },
+        {
+          "type": "list_block",
+          "named": true
+        },
+        {
+          "type": "paragraph_block",
           "named": true
         }
       ]
     }
-  },
-  {
-    "type": "list_marker",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "markdown_link",
@@ -478,30 +505,22 @@
     }
   },
   {
-    "type": "nested_list_item",
+    "type": "paragraph_block",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "dedent",
-          "named": true
-        },
-        {
-          "type": "indent",
-          "named": true
-        },
-        {
-          "type": "list_item",
+          "type": "paragraph_content",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "paragraph",
+    "type": "paragraph_content",
     "named": true,
     "fields": {},
     "children": {
@@ -660,6 +679,14 @@
     "named": false
   },
   {
+    "type": "article_name",
+    "named": true
+  },
+  {
+    "type": "code_content",
+    "named": true
+  },
+  {
     "type": "dedent",
     "named": true
   },
@@ -672,11 +699,11 @@
     "named": true
   },
   {
-    "type": "label_name",
+    "type": "language",
     "named": true
   },
   {
-    "type": "language",
+    "type": "latex_content",
     "named": true
   },
   {

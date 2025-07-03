@@ -1,0 +1,523 @@
+  links:
+      1. ✗ [31mLinks[0m
+  test:
+      2. ✓ [32mArticle Headers[0m
+      3. ✓ [32mMultiple Headers and Tags[0m
+      4. ✗ [31mHeadings[0m
+      5. ✗ [31mLabel Blocks[0m
+      6. ✗ [31mNested Lists[0m
+      7. ✗ [31mFormatting[0m
+      8. ✗ [31mCode Blocks[0m
+      9. ✗ [31mLinks[0m
+     10. ✗ [31mLaTeX[0m
+     11. ✗ [31mMulti-line Paragraphs[0m
+  trouble:
+     12. ✗ [31mLists[0m
+     13. ✗ [31mFormatting[0m
+
+11 failures:
+
+correct / [32mexpected[0m / [31munexpected[0m
+
+  1. Links:
+
+    (document
+      (article_headers
+        (article_header
+          (article_name)))
+[31m      (ERROR)
+[0m      (body
+        (block
+[31m          (paragraph_block
+[0m[31m            (paragraph_content
+[0m[32m          (paragraph
+[0m[32m            (paragraph_line
+[0m              (link
+                (zortex_link
+                  (link_text))))))
+        (block
+[31m          (paragraph_block
+[0m[31m            (paragraph_content
+[0m[32m          (paragraph
+[0m[32m            (paragraph_line
+[0m              (link
+                (zortex_link
+                  (link_text))))))
+        (block
+[31m          (paragraph_block
+[0m[31m            (paragraph_content
+[0m[32m          (paragraph
+[0m[32m            (paragraph_line
+[0m              (link
+                (zortex_link
+                  (link_text))))))
+        (block
+[31m          (paragraph_block
+[0m[31m            (paragraph_content
+[0m[32m          (paragraph
+[0m[32m            (paragraph_line
+[0m              (link
+                (zortex_link
+                  (link_text))))))
+        (block
+[31m          (paragraph_block
+[0m[31m            (paragraph_content
+[0m[32m          (paragraph
+[0m[32m            (paragraph_line
+[0m              (link
+                (zortex_link
+                  (link_text))))))
+        (block
+[31m          (paragraph_block
+[0m[31m            (paragraph_content
+[0m[32m          (paragraph
+[0m[32m            (paragraph_line
+[0m              (link
+                (markdown_link
+                  (link_text)
+                  (url))))))))
+
+
+  2. Headings:
+
+    (document
+      (article_headers
+        (article_header
+          (article_name)))
+      (tags
+        (tag_line
+          (tag_name)))
+[31m      (ERROR)
+[0m      (body
+        (block
+          (heading
+            (heading_marker)
+            (heading_content
+              (text))))
+        (block
+          (heading
+            (heading_marker)
+            (heading_content
+              (text))))
+        (block
+          (heading
+            (heading_marker)
+            (heading_content
+              (text))))))
+
+
+  3. Label Blocks:
+
+    (document
+      (article_headers
+        (article_header
+          (article_name)))
+      (tags
+        (tag_line
+          (tag_name)))
+[31m      (ERROR
+[0m[31m        (language)
+[0m[31m        (language)
+[0m[31m        (language)
+[0m[31m        (language)
+[0m[31m        (language)
+[0m[31m        (language)
+[0m[31m        (language)
+[0m[31m        (language)
+[0m[31m        (UNEXPECTED '.')
+[0m[31m        (language)
+[0m[31m        (language)
+[0m[31m        (language)
+[0m[31m        (language)
+[0m[31m        (language)
+[0m[31m        (UNEXPECTED '.')))))(language)(body
+[0m[31m  (block
+[0m[31m    (list_block
+[0m[31m      (list_item
+[0m[31m        (list_marker)
+[0m[31m        (list_item_content
+[0m[31m          (text)))))
+[0m[31m  (block
+[0m[31m    (list_block
+[0m[31m      (list_item
+[0m[31m        (list_marker)
+[0m[31m        (list_item_content
+[0m[31m          (text))))))[0m
+[32m      (body
+[0m[32m        (block
+[0m[32m          (label_block
+[0m[32m            (label_line)
+[0m[32m            (indent)
+[0m[32m            (label_content
+[0m[32m              (block
+[0m[32m                (paragraph_block
+[0m[32m                  (paragraph_content
+[0m[32m                    (text)
+[0m[32m                    (text)
+[0m[32m                    (text)))))
+[0m[32m            (dedent)))
+[0m[32m        (block
+[0m[32m          (label_block
+[0m[32m            (label_line)
+[0m[32m            (indent)
+[0m[32m            (label_content
+[0m[32m              (block
+[0m[32m                (list_block
+[0m[32m                  (list_item
+[0m[32m                    (list_marker)
+[0m[32m                    (list_item_content
+[0m[32m                      (text)))
+[0m[32m                  (list_item
+[0m[32m                    (list_marker)
+[0m[32m                    (list_item_content
+[0m[32m                      (text))))))
+[0m[32m            (dedent)))))[0m
+
+
+  4. Nested Lists:
+
+    (document
+      (article_headers
+        (article_header
+          (article_name)))
+      (body
+        (block
+          (list_block
+            (list_item
+              (list_marker)
+              (list_item_content
+[31m                (text)))))
+[0m[31m        (block
+[0m[31m          (list_block
+[0m[32m                (text)))
+[0m            (list_item
+              (list_marker)
+              (list_item_content
+                (text))
+              (indent)
+              (list_nested_content
+                (block
+[31m                  (paragraph_block
+[0m[31m                    (paragraph_content
+[0m[31m                      (text))))
+[0m[31m                (block
+[0m[31m                  (paragraph_block
+[0m[31m                    (paragraph_content
+[0m[31m                      (text)))))
+[0m[31m              (dedent))))
+[0m[32m                  (list_block
+[0m[32m                    (list_item
+[0m[32m                      (list_marker)
+[0m[32m                      (list_item_content
+[0m[32m                        (text)))
+[0m[32m                    (list_item
+[0m[32m                      (list_marker)
+[0m[32m                      (list_item_content
+[0m[32m                        (text))))))
+[0m[32m              (dedent))
+[0m[32m            (list_item
+[0m[32m              (list_marker)
+[0m[32m              (list_item_content
+[0m[32m                (text)))))
+[0m        (block
+          (list_block
+            (list_item
+              (list_marker)
+              (list_item_content
+[31m                (text))))))
+[0m[31m      (ERROR))[0m
+[32m                (text)))
+[0m[32m            (list_item
+[0m[32m              (list_marker)
+[0m[32m              (list_item_content
+[0m[32m                (text)))))))[0m
+
+
+  5. Formatting:
+
+    (document
+      (article_headers
+        (article_header
+          (article_name)))
+[31m      (ERROR
+[0m[31m        (language)
+[0m[31m        (language))
+[0m      (body
+        (block
+          (paragraph_block
+            (paragraph_content
+[32m              (text)
+[0m              (formatted_text
+                (bold
+                  (text)))
+              (text))))
+[31m        (ERROR
+[0m[31m          (UNEXPECTED '.')
+[0m[31m          (language)
+[0m[31m          (language))
+[0m        (block
+          (paragraph_block
+            (paragraph_content
+[32m              (text)
+[0m[32m              (formatted_text
+[0m[32m                (italic
+[0m[32m                  (text)))
+[0m[32m              (text))))
+[0m[32m        (block
+[0m[32m          (paragraph_block
+[0m[32m            (paragraph_content
+[0m[32m              (text)
+[0m              (formatted_text
+                (bolditalic
+                  (text)))
+              (text))))))
+
+
+  6. Code Blocks:
+
+    (document
+      (article_headers
+        (article_header
+          (article_name)))
+[31m      (ERROR)
+[0m      (body
+        (block
+          (code_block
+            (language)
+            (code_content)))
+[31m        (ERROR)
+[0m        (block
+          (code_block
+            (code_content)))))
+
+
+  7. Links:
+
+    (document
+      (article_headers
+        (article_header
+          (article_name)))
+[31m      (ERROR)
+[0m      (body
+        (block
+          (paragraph_block
+            (paragraph_content
+              (link
+                (zortex_link
+                  (link_text))))))
+        (block
+          (paragraph_block
+            (paragraph_content
+              (link
+                (zortex_link
+                  (link_text))))))
+        (block
+          (paragraph_block
+            (paragraph_content
+              (link
+                (zortex_link
+                  (link_text))))))
+        (block
+          (paragraph_block
+            (paragraph_content
+              (link
+                (zortex_link
+                  (link_text))))))
+        (block
+          (paragraph_block
+            (paragraph_content
+              (link
+                (zortex_link
+                  (link_text))))))
+        (block
+          (paragraph_block
+            (paragraph_content
+              (link
+                (markdown_link
+                  (link_text)
+                  (url))))))))
+
+
+  8. LaTeX:
+
+    (document
+      (article_headers
+        (article_header
+          (article_name)))
+[31m      (ERROR
+[0m[31m        (language)
+[0m[31m        (language))
+[0m      (body
+        (block
+          (paragraph_block
+            (paragraph_content
+[31m              (inline_latex))))
+[0m[32m              (text)
+[0m[32m              (inline_latex)
+[0m[32m              (text))))
+[0m        (block
+[31m          (label_block
+[0m[31m            (label_line)))
+[0m[31m        (ERROR)
+[0m[32m          (paragraph_block
+[0m[32m            (paragraph_content
+[0m[32m              (text))))
+[0m        (block
+          (latex_block
+            (latex_content)))))
+
+
+  9. Multi-line Paragraphs:
+
+    (document
+      (article_headers
+        (article_header
+          (article_name)))
+[31m      (ERROR
+[0m[31m        (language)
+[0m[31m        (language)
+[0m[31m        (language))
+[0m      (body
+        (block
+          (paragraph_block
+            (paragraph_content
+[32m              (text)
+[0m              (formatted_text
+                (bold
+                  (text)))
+              (text)
+              (formatted_text
+                (italic
+                  (text)))
+              (text)
+              (inline_code)
+              (text)
+              (link
+                (zortex_link
+                  (link_text)))
+[31m              (text))))
+[0m[31m        (ERROR)
+[0m[31m        (block
+[0m[31m          (paragraph_block
+[0m[31m            (paragraph_content
+[0m[32m              (text)
+[0m[32m              (text)
+[0m[32m              (inline_latex)
+[0m[32m              (text)
+[0m              (formatted_text
+                (bolditalic
+                  (text)))
+              (text))))
+        (block
+          (paragraph_block
+            (paragraph_content
+              (text))))))
+
+
+  10. Lists:
+
+    (document
+      (article_headers
+        (article_header
+          (article_name)))
+      (body
+        (block
+[31m          (list_block
+[0m[32m          (list
+[0m[32m            (list_item
+[0m[32m              (list_marker)
+[0m[32m              (list_content
+[0m[32m                (text)))
+[0m[32m            (list_item
+[0m[32m              (list_marker)
+[0m[32m              (list_content
+[0m[32m                (text)))
+[0m            (list_item
+[32m              (indent)
+[0m              (list_marker)
+[31m              (list_item_content
+[0m[32m              (list_content
+[0m[32m                (text)))
+[0m[32m            (list_item
+[0m[32m              (list_marker)
+[0m[32m              (list_content
+[0m[32m                (text))
+[0m[32m              (dedent))
+[0m[32m            (list_item
+[0m[32m              (list_marker)
+[0m[32m              (list_content
+[0m                (text)))))
+        (block
+[31m          (list_block
+[0m[32m          (list
+[0m            (list_item
+              (list_marker)
+[31m              (list_item_content
+[0m[31m                (text))
+[0m[31m              (indent)
+[0m[31m              (list_nested_content
+[0m[31m                (block
+[0m[31m                  (paragraph_block
+[0m[31m                    (paragraph_content
+[0m[31m                      (text))))
+[0m[31m                (block
+[0m[31m                  (paragraph_block
+[0m[31m                    (paragraph_content
+[0m[31m                      (text)))))
+[0m[31m              (dedent))))
+[0m[31m        (block
+[0m[31m          (list_block
+[0m[32m              (list_content
+[0m[32m                (text)))
+[0m            (list_item
+              (list_marker)
+[31m              (list_item_content
+[0m[31m                (text))))))
+[0m[31m      (ERROR))[0m
+[32m              (list_content
+[0m[32m                (text)))))))[0m
+
+
+  11. Formatting:
+
+    (document
+      (article_headers
+        (article_header
+          (article_name)))
+[31m      (ERROR
+[0m[31m        (language)
+[0m[31m        (language))
+[0m      (body
+        (block
+[31m          (paragraph_block
+[0m[31m            (paragraph_content
+[0m[32m          (paragraph
+[0m[32m            (paragraph_line
+[0m[32m              (text)
+[0m              (formatted_text
+                (bold
+                  (text)))
+              (text))))
+[31m        (ERROR
+[0m[31m          (UNEXPECTED '.')
+[0m[31m          (language)
+[0m[31m          (language))
+[0m        (block
+[31m          (paragraph_block
+[0m[31m            (paragraph_content
+[0m[32m          (paragraph
+[0m[32m            (paragraph_line
+[0m[32m              (text)
+[0m[32m              (formatted_text
+[0m[32m                (italic
+[0m[32m                  (text)))
+[0m[32m              (text))))
+[0m[32m        (block
+[0m[32m          (paragraph
+[0m[32m            (paragraph_line
+[0m[32m              (text)
+[0m              (formatted_text
+                (bolditalic
+                  (text)))
+              (text))))))
+

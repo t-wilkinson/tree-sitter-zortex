@@ -13,6 +13,9 @@ generate:
 test: generate
 	tree-sitter test
 
+test-l: generate
+	tree-sitter test -i "Lists"
+
 # Test highlighting on example file
 highlight: generate
 	tree-sitter highlight test.zortex
@@ -49,10 +52,10 @@ quick: generate test highlight
 # Debug - clean, build, and test specific cases
 debug: clean generate
 	@echo "=== Testing label vs paragraph disambiguation ==="
-	@tree-sitter test -f "Formatting"
+	@tree-sitter test -i "Formatting"
 	@echo ""
 	@echo "=== Testing nested lists ==="
-	@tree-sitter test -f "Lists"
+	@tree-sitter test -i "Lists"
 
 # Help
 help:

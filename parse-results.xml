@@ -1,0 +1,933 @@
+<?xml version="1.0"?>
+<document srow="0" scol="0" erow="112" ecol="0">
+  <article_headers srow="0" scol="0" erow="2" ecol="0">
+    <article_header srow="0" scol="0" erow="1" ecol="0">
+      @@
+      <article_name srow="0" scol="2" erow="0" ecol="31">Machine Learning Fundamentals</article_name>
+      
+
+    </article_header>
+    <article_header srow="1" scol="0" erow="2" ecol="0">
+      @@
+      <article_name srow="1" scol="2" erow="1" ecol="11">ML Basics</article_name>
+      
+
+    </article_header>
+  </article_headers>
+  <tags srow="2" scol="0" erow="5" ecol="0">
+    <tag_line srow="2" scol="0" erow="3" ecol="0">
+      @
+      <tag_name srow="2" scol="1" erow="2" ecol="24">artificial-intelligence</tag_name>
+      
+
+    </tag_line>
+    <tag_line srow="3" scol="0" erow="4" ecol="0">
+      @
+      <tag_name srow="3" scol="1" erow="3" ecol="14">deep-learning</tag_name>
+      
+
+    </tag_line>
+    <tag_line srow="4" scol="0" erow="5" ecol="0">
+      @
+      <tag_name srow="4" scol="1" erow="4" ecol="9">tutorial</tag_name>
+      
+
+    </tag_line>
+  </tags>
+  <ERROR srow="5" scol="0" erow="6" ecol="0">
+    
+
+  </ERROR>
+  <body srow="6" scol="0" erow="112" ecol="0">
+    <block srow="6" scol="0" erow="7" ecol="0">
+      <heading srow="6" scol="0" erow="7" ecol="0">
+        <heading_marker srow="6" scol="0" erow="6" ecol="1">#</heading_marker>
+        <heading_content srow="6" scol="2" erow="6" ecol="34">
+          <text srow="6" scol="2" erow="6" ecol="34">Introduction to Machine Learning</text>
+        </heading_content>
+        
+
+      </heading>
+    </block>
+    <ERROR srow="7" scol="0" erow="8" ecol="31">
+      
+
+      <language srow="8" scol="0" erow="8" ecol="7">Machine</language>
+      <language srow="8" scol="7" erow="8" ecol="16"> learning</language>
+      <language srow="8" scol="16" erow="8" ecol="19"> is</language>
+      <language srow="8" scol="19" erow="8" ecol="21"> a</language>
+      <language srow="8" scol="21" erow="8" ecol="28"> subset</language>
+      <language srow="8" scol="28" erow="8" ecol="31"> of</language>
+    </ERROR>
+    <block srow="8" scol="31" erow="10" ecol="0">
+      <paragraph_block srow="8" scol="31" erow="10" ecol="0">
+        <paragraph_content srow="8" scol="31" erow="10" ecol="0">
+           
+          <formatted_text srow="8" scol="32" erow="8" ecol="59">
+            <bold srow="8" scol="32" erow="8" ecol="59">
+              **
+              <text srow="8" scol="34" erow="8" ecol="57">artificial intelligence</text>
+              **
+            </bold>
+          </formatted_text>
+           
+          <text srow="8" scol="60" erow="8" ecol="194">that focuses on building systems that learn from data. Unlike traditional programming where we give specific instructions, ML systems </text>
+          <formatted_text srow="8" scol="194" erow="8" ecol="214">
+            <bolditalic srow="8" scol="194" erow="8" ecol="214">
+              ***
+              <text srow="8" scol="197" erow="8" ecol="211">learn patterns</text>
+              ***
+            </bolditalic>
+          </formatted_text>
+           
+          <text srow="8" scol="215" erow="8" ecol="229">from examples.</text>
+          
+
+        </paragraph_content>
+      </paragraph_block>
+    </block>
+    <block srow="10" scol="0" erow="11" ecol="0">
+      <heading srow="10" scol="0" erow="11" ecol="0">
+        <heading_marker srow="10" scol="0" erow="10" ecol="2">##</heading_marker>
+        <heading_content srow="10" scol="3" erow="10" ecol="28">
+          <text srow="10" scol="3" erow="10" ecol="28">Types of Machine Learning</text>
+        </heading_content>
+        
+
+      </heading>
+    </block>
+    <ERROR srow="11" scol="0" erow="13" ecol="0">
+      
+
+      <language srow="12" scol="0" erow="12" ecol="10">Supervised</language>
+      <language srow="12" scol="10" erow="12" ecol="19"> Learning</language>
+      :
+      
+
+    </ERROR>
+    <block srow="13" scol="0" erow="14" ecol="0">
+      <list_block srow="13" scol="0" erow="14" ecol="0">
+        <list_item srow="13" scol="0" erow="14" ecol="0">
+          <list_marker srow="13" scol="0" erow="13" ecol="1">
+            -
+          </list_marker>
+          <list_item_content srow="13" scol="2" erow="14" ecol="0">
+            <text srow="13" scol="2" erow="13" ecol="44">Classification: Predicting discrete labels</text>
+            
+
+          </list_item_content>
+        </list_item>
+      </list_block>
+    </block>
+    <block srow="14" scol="0" erow="20" ecol="0">
+      <list_block srow="14" scol="0" erow="20" ecol="0">
+        <list_item srow="14" scol="0" erow="20" ecol="0">
+          <list_marker srow="14" scol="0" erow="14" ecol="1">
+            -
+          </list_marker>
+          <list_item_content srow="14" scol="2" erow="15" ecol="0">
+            <text srow="14" scol="2" erow="14" ecol="42">Regression: Predicting continuous values</text>
+            
+
+          </list_item_content>
+          <indent srow="15" scol="0" erow="15" ecol="0"></indent>
+          <list_nested_content srow="15" scol="0" erow="20" ecol="0">
+            <block srow="15" scol="0" erow="16" ecol="0">
+              <paragraph_block srow="15" scol="0" erow="16" ecol="0">
+                <paragraph_content srow="15" scol="0" erow="16" ecol="0">
+                    
+                  <text srow="15" scol="2" erow="15" ecol="21">- Linear regression</text>
+                  
+
+                </paragraph_content>
+              </paragraph_block>
+            </block>
+            <block srow="16" scol="0" erow="17" ecol="0">
+              <paragraph_block srow="16" scol="0" erow="17" ecol="0">
+                <paragraph_content srow="16" scol="0" erow="17" ecol="0">
+                    
+                  <text srow="16" scol="2" erow="16" ecol="25">- Polynomial regression</text>
+                  
+
+                </paragraph_content>
+              </paragraph_block>
+            </block>
+            <block srow="17" scol="0" erow="18" ecol="0">
+              <paragraph_block srow="17" scol="0" erow="18" ecol="0">
+                <paragraph_content srow="17" scol="0" erow="18" ecol="0">
+                      
+                  <text srow="17" scol="4" erow="17" ecol="15">- Quadratic</text>
+                  
+
+                </paragraph_content>
+              </paragraph_block>
+            </block>
+            <block srow="18" scol="0" erow="20" ecol="0">
+              <paragraph_block srow="18" scol="0" erow="20" ecol="0">
+                <paragraph_content srow="18" scol="0" erow="20" ecol="0">
+                      
+                  <text srow="18" scol="4" erow="18" ecol="11">- Cubic</text>
+                  
+
+                </paragraph_content>
+              </paragraph_block>
+            </block>
+          </list_nested_content>
+          <dedent srow="20" scol="0" erow="20" ecol="0"></dedent>
+        </list_item>
+      </list_block>
+    </block>
+    <block srow="20" scol="0" erow="21" ecol="0">
+      <label_block srow="20" scol="0" erow="21" ecol="0">
+        <label_line srow="20" scol="0" erow="21" ecol="0">
+          :
+          
+
+        </label_line>
+      </label_block>
+    </block>
+    <ERROR srow="21" scol="0" erow="23" ecol="0">
+      
+
+      <language srow="22" scol="2" erow="22" ecol="17"> Dimensionality</language>
+      <language srow="22" scol="17" erow="22" ecol="27"> reduction</language>
+      
+
+      <indent srow="23" scol="0" erow="23" ecol="0"></indent>
+    </ERROR>
+    <block srow="23" scol="0" erow="24" ecol="0">
+      <paragraph_block srow="23" scol="0" erow="24" ecol="0">
+        <paragraph_content srow="23" scol="0" erow="24" ecol="0">
+             
+          <text srow="23" scol="3" erow="23" ecol="40">1. PCA (Principal Component Analysis)</text>
+          
+
+        </paragraph_content>
+      </paragraph_block>
+    </block>
+    <block srow="24" scol="0" erow="25" ecol="0">
+      <paragraph_block srow="24" scol="0" erow="25" ecol="0">
+        <paragraph_content srow="24" scol="0" erow="25" ecol="0">
+             
+          <text srow="24" scol="3" erow="24" ecol="11">2. t-SNE</text>
+          
+
+        </paragraph_content>
+      </paragraph_block>
+    </block>
+    <ERROR srow="25" scol="0" erow="27" ecol="0">
+      
+
+      
+
+      <dedent srow="27" scol="0" erow="27" ecol="0"></dedent>
+    </ERROR>
+    <block srow="27" scol="0" erow="28" ecol="0">
+      <heading srow="27" scol="0" erow="28" ecol="0">
+        <heading_marker srow="27" scol="0" erow="27" ecol="2">##</heading_marker>
+        <heading_content srow="27" scol="3" erow="27" ecol="27">
+          <text srow="27" scol="3" erow="27" ecol="27">Mathematical Foundations</text>
+        </heading_content>
+        
+
+      </heading>
+    </block>
+    <ERROR srow="28" scol="0" erow="29" ecol="42">
+      
+
+      <language srow="29" scol="0" erow="29" ecol="3">The</language>
+      <language srow="29" scol="3" erow="29" ecol="8"> core</language>
+      <language srow="29" scol="8" erow="29" ecol="17"> equation</language>
+      <language srow="29" scol="17" erow="29" ecol="21"> for</language>
+      <language srow="29" scol="21" erow="29" ecol="28"> linear</language>
+      <language srow="29" scol="28" erow="29" ecol="39"> regression</language>
+      <language srow="29" scol="39" erow="29" ecol="42"> is</language>
+    </ERROR>
+    <block srow="29" scol="42" erow="30" ecol="0">
+      <paragraph_block srow="29" scol="42" erow="30" ecol="0">
+        <paragraph_content srow="29" scol="42" erow="30" ecol="0">
+           
+          <inline_latex srow="29" scol="43" erow="29" ecol="55">
+            $
+            $
+          </inline_latex>
+          <text srow="29" scol="55" erow="29" ecol="63">, where:</text>
+          
+
+        </paragraph_content>
+      </paragraph_block>
+    </block>
+    <block srow="30" scol="0" erow="31" ecol="0">
+      <list_block srow="30" scol="0" erow="31" ecol="0">
+        <list_item srow="30" scol="0" erow="31" ecol="0">
+          <list_marker srow="30" scol="0" erow="30" ecol="1">
+            -
+          </list_marker>
+          <list_item_content srow="30" scol="2" erow="31" ecol="0">
+            <inline_latex srow="30" scol="2" erow="30" ecol="5">
+              $
+              $
+            </inline_latex>
+             
+            <text srow="30" scol="6" erow="30" ecol="18">is the slope</text>
+            
+
+          </list_item_content>
+        </list_item>
+      </list_block>
+    </block>
+    <block srow="31" scol="0" erow="32" ecol="0">
+      <list_block srow="31" scol="0" erow="32" ecol="0">
+        <list_item srow="31" scol="0" erow="32" ecol="0">
+          <list_marker srow="31" scol="0" erow="31" ecol="1">
+            -
+          </list_marker>
+          <list_item_content srow="31" scol="2" erow="32" ecol="0">
+            <inline_latex srow="31" scol="2" erow="31" ecol="5">
+              $
+              $
+            </inline_latex>
+             
+            <text srow="31" scol="6" erow="31" ecol="24">is the y-intercept</text>
+            
+
+          </list_item_content>
+        </list_item>
+      </list_block>
+    </block>
+    <ERROR srow="32" scol="0" erow="35" ecol="0">
+      
+
+      <language srow="33" scol="0" erow="33" ecol="3">For</language>
+      <language srow="33" scol="3" erow="33" ecol="8"> more</language>
+      <language srow="33" scol="8" erow="33" ecol="16"> complex</language>
+      <language srow="33" scol="16" erow="33" ecol="23"> models</language>
+      <ERROR srow="33" scol="23" erow="33" ecol="24">,</ERROR>
+      <language srow="33" scol="24" erow="33" ecol="27"> we</language>
+      <language srow="33" scol="27" erow="33" ecol="31"> use</language>
+      <language srow="33" scol="31" erow="33" ecol="38"> matrix</language>
+      <language srow="33" scol="38" erow="33" ecol="47"> notation</language>
+      :
+      
+
+      
+
+    </ERROR>
+    <block srow="35" scol="0" erow="38" ecol="0">
+      <latex_block srow="35" scol="0" erow="38" ecol="0">
+        $$
+        
+
+        <latex_content srow="36" scol="0" erow="37" ecol="0">\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}
+</latex_content>
+        $$
+        
+
+      </latex_block>
+    </block>
+    <ERROR srow="38" scol="0" erow="39" ecol="5">
+      
+
+      <language srow="39" scol="0" erow="39" ecol="5">Where</language>
+    </ERROR>
+    <block srow="39" scol="5" erow="41" ecol="0">
+      <paragraph_block srow="39" scol="5" erow="41" ecol="0">
+        <paragraph_content srow="39" scol="5" erow="41" ecol="0">
+           
+          <inline_latex srow="39" scol="6" erow="39" ecol="18">
+            $
+            $
+          </inline_latex>
+           
+          <text srow="39" scol="19" erow="39" ecol="44">is the design matrix and </text>
+          <inline_latex srow="39" scol="44" erow="39" ecol="64">
+            $
+            $
+          </inline_latex>
+           
+          <text srow="39" scol="65" erow="39" ecol="85">contains parameters.</text>
+          
+
+        </paragraph_content>
+      </paragraph_block>
+    </block>
+    <block srow="41" scol="0" erow="42" ecol="0">
+      <heading srow="41" scol="0" erow="42" ecol="0">
+        <heading_marker srow="41" scol="0" erow="41" ecol="3">###</heading_marker>
+        <heading_content srow="41" scol="4" erow="41" ecol="16">
+          <text srow="41" scol="4" erow="41" ecol="16">Code Example</text>
+        </heading_content>
+        
+
+      </heading>
+    </block>
+    <ERROR srow="42" scol="0" erow="45" ecol="0">
+      
+
+      <language srow="43" scol="0" erow="43" ecol="4">Here</language>
+      <ERROR srow="43" scol="4" erow="43" ecol="5">'</ERROR>
+      <language srow="43" scol="5" erow="43" ecol="6">s</language>
+      <language srow="43" scol="6" erow="43" ecol="8"> a</language>
+      <language srow="43" scol="8" erow="43" ecol="15"> simple</language>
+      <language srow="43" scol="15" erow="43" ecol="22"> Python</language>
+      <language srow="43" scol="22" erow="43" ecol="37"> implementation</language>
+      :
+      
+
+      
+
+    </ERROR>
+    <block srow="45" scol="0" erow="62" ecol="0">
+      <code_block srow="45" scol="0" erow="62" ecol="0">
+        ```
+        <language srow="45" scol="3" erow="45" ecol="9">python</language>
+        
+
+        <code_content srow="46" scol="0" erow="61" ecol="0">import numpy as np
+
+class LinearRegression:
+    def __init__(self):
+        self.weights = None
+        
+    def fit(self, X, y):
+        # Add bias term
+        X = np.c_[np.ones(X.shape[0]), X]
+        # Normal equation
+        self.weights = np.linalg.inv(X.T @ X) @ X.T @ y
+        
+    def predict(self, X):
+        X = np.c_[np.ones(X.shape[0]), X]
+        return X @ self.weights
+</code_content>
+        ```
+        
+
+      </code_block>
+    </block>
+    <ERROR srow="62" scol="0" erow="63" ecol="0">
+      
+
+    </ERROR>
+    <block srow="63" scol="0" erow="64" ecol="0">
+      <heading srow="63" scol="0" erow="64" ecol="0">
+        <heading_marker srow="63" scol="0" erow="63" ecol="2">##</heading_marker>
+        <heading_content srow="63" scol="3" erow="63" ecol="23">
+          <text srow="63" scol="3" erow="63" ecol="23">Links and References</text>
+        </heading_content>
+        
+
+      </heading>
+    </block>
+    <ERROR srow="64" scol="0" erow="65" ecol="0">
+      
+
+    </ERROR>
+    <block srow="65" scol="0" erow="66" ecol="0">
+      <heading srow="65" scol="0" erow="66" ecol="0">
+        <heading_marker srow="65" scol="0" erow="65" ecol="3">###</heading_marker>
+        <heading_content srow="65" scol="4" erow="65" ecol="18">
+          <text srow="65" scol="4" erow="65" ecol="18">Internal Links</text>
+        </heading_content>
+        
+
+      </heading>
+    </block>
+    <block srow="66" scol="0" erow="67" ecol="0">
+      <list_block srow="66" scol="0" erow="67" ecol="0">
+        <list_item srow="66" scol="0" erow="67" ecol="0">
+          <list_marker srow="66" scol="0" erow="66" ecol="1">
+            -
+          </list_marker>
+          <list_item_content srow="66" scol="2" erow="67" ecol="0">
+            <text srow="66" scol="2" erow="66" ecol="6">See </text>
+            <link srow="66" scol="6" erow="66" ecol="23">
+              <zortex_link srow="66" scol="6" erow="66" ecol="23">
+                [
+                <link_text srow="66" scol="7" erow="66" ecol="22">Neural Networks</link_text>
+                ]
+              </zortex_link>
+            </link>
+             
+            <text srow="66" scol="24" erow="66" ecol="41">for deep learning</text>
+            
+
+          </list_item_content>
+        </list_item>
+      </list_block>
+    </block>
+    <block srow="67" scol="0" erow="68" ecol="0">
+      <list_block srow="67" scol="0" erow="68" ecol="0">
+        <list_item srow="67" scol="0" erow="68" ecol="0">
+          <list_marker srow="67" scol="0" erow="67" ecol="1">
+            -
+          </list_marker>
+          <list_item_content srow="67" scol="2" erow="68" ecol="0">
+            <text srow="67" scol="2" erow="67" ecol="8">Check </text>
+            <link srow="67" scol="8" erow="67" ecol="42">
+              <zortex_link srow="67" scol="8" erow="67" ecol="42">
+                [
+                <link_text srow="67" scol="9" erow="67" ecol="41">Neural Networks/#Backpropagation</link_text>
+                ]
+              </zortex_link>
+            </link>
+             
+            <text srow="67" scol="43" erow="67" ecol="63">for training details</text>
+            
+
+          </list_item_content>
+        </list_item>
+      </list_block>
+    </block>
+    <block srow="68" scol="0" erow="69" ecol="0">
+      <list_block srow="68" scol="0" erow="69" ecol="0">
+        <list_item srow="68" scol="0" erow="69" ecol="0">
+          <list_marker srow="68" scol="0" erow="68" ecol="1">
+            -
+          </list_marker>
+          <list_item_content srow="68" scol="2" erow="69" ecol="0">
+            <text srow="68" scol="2" erow="68" ecol="9">Review </text>
+            <link srow="68" scol="9" erow="68" ecol="40">
+              <zortex_link srow="68" scol="9" erow="68" ecol="40">
+                [
+                <link_text srow="68" scol="10" erow="68" ecol="39">Neural Networks/:Architecture</link_text>
+                ]
+              </zortex_link>
+            </link>
+             
+            <text srow="68" scol="41" erow="68" ecol="59">for network design</text>
+            
+
+          </list_item_content>
+        </list_item>
+      </list_block>
+    </block>
+    <block srow="69" scol="0" erow="70" ecol="0">
+      <list_block srow="69" scol="0" erow="70" ecol="0">
+        <list_item srow="69" scol="0" erow="70" ecol="0">
+          <list_marker srow="69" scol="0" erow="69" ecol="1">
+            -
+          </list_marker>
+          <list_item_content srow="69" scol="2" erow="70" ecol="0">
+            <text srow="69" scol="2" erow="69" ecol="10">Jump to </text>
+            <link srow="69" scol="10" erow="69" ecol="38">
+              <zortex_link srow="69" scol="10" erow="69" ecol="38">
+                [
+                <link_text srow="69" scol="11" erow="69" ecol="37">/#Mathematical Foundations</link_text>
+                ]
+              </zortex_link>
+            </link>
+             
+            <text srow="69" scol="39" erow="69" ecol="44">above</text>
+            
+
+          </list_item_content>
+        </list_item>
+      </list_block>
+    </block>
+    <block srow="70" scol="0" erow="71" ecol="0">
+      <list_block srow="70" scol="0" erow="71" ecol="0">
+        <list_item srow="70" scol="0" erow="71" ecol="0">
+          <list_marker srow="70" scol="0" erow="70" ecol="1">
+            -
+          </list_marker>
+          <list_item_content srow="70" scol="2" erow="71" ecol="0">
+            <text srow="70" scol="2" erow="70" ecol="13">Related to </text>
+            <link srow="70" scol="13" erow="70" ecol="35">
+              <zortex_link srow="70" scol="13" erow="70" ecol="35">
+                [
+                <link_text srow="70" scol="14" erow="70" ecol="34">:Supervised Learning</link_text>
+                ]
+              </zortex_link>
+            </link>
+             
+            <text srow="70" scol="36" erow="70" ecol="43">concept</text>
+            
+
+          </list_item_content>
+        </list_item>
+      </list_block>
+    </block>
+    <ERROR srow="71" scol="0" erow="72" ecol="0">
+      
+
+    </ERROR>
+    <block srow="72" scol="0" erow="73" ecol="0">
+      <heading srow="72" scol="0" erow="73" ecol="0">
+        <heading_marker srow="72" scol="0" erow="72" ecol="3">###</heading_marker>
+        <heading_content srow="72" scol="4" erow="72" ecol="22">
+          <text srow="72" scol="4" erow="72" ecol="22">External Resources</text>
+        </heading_content>
+        
+
+      </heading>
+    </block>
+    <block srow="73" scol="0" erow="74" ecol="0">
+      <list_block srow="73" scol="0" erow="74" ecol="0">
+        <list_item srow="73" scol="0" erow="74" ecol="0">
+          <list_marker srow="73" scol="0" erow="73" ecol="1">
+            -
+          </list_marker>
+          <list_item_content srow="73" scol="2" erow="74" ecol="0">
+            <link srow="73" scol="2" erow="73" ecol="56">
+              <markdown_link srow="73" scol="2" erow="73" ecol="56">
+                [
+                <link_text srow="73" scol="3" erow="73" ecol="29">scikit-learn documentation</link_text>
+                ]
+                (
+                <url srow="73" scol="31" erow="73" ecol="55">https://scikit-learn.org</url>
+                )
+              </markdown_link>
+            </link>
+            
+
+          </list_item_content>
+        </list_item>
+      </list_block>
+    </block>
+    <block srow="74" scol="0" erow="75" ecol="0">
+      <list_block srow="74" scol="0" erow="75" ecol="0">
+        <list_item srow="74" scol="0" erow="75" ecol="0">
+          <list_marker srow="74" scol="0" erow="74" ecol="1">
+            -
+          </list_marker>
+          <list_item_content srow="74" scol="2" erow="75" ecol="0">
+            <link srow="74" scol="2" erow="74" ecol="56">
+              <markdown_link srow="74" scol="2" erow="74" ecol="56">
+                [
+                <link_text srow="74" scol="3" erow="74" ecol="21">Deep Learning Book</link_text>
+                ]
+                (
+                <url srow="74" scol="23" erow="74" ecol="55">http://www.deeplearningbook.org/</url>
+                )
+              </markdown_link>
+            </link>
+            
+
+          </list_item_content>
+        </list_item>
+      </list_block>
+    </block>
+    <ERROR srow="75" scol="0" erow="76" ecol="0">
+      
+
+    </ERROR>
+    <block srow="76" scol="0" erow="77" ecol="0">
+      <heading srow="76" scol="0" erow="77" ecol="0">
+        <heading_marker srow="76" scol="0" erow="76" ecol="2">##</heading_marker>
+        <heading_content srow="76" scol="3" erow="76" ecol="18">
+          <text srow="76" scol="3" erow="76" ecol="18">Advanced Topics</text>
+        </heading_content>
+        
+
+      </heading>
+    </block>
+    <ERROR srow="77" scol="0" erow="81" ecol="0">
+      
+
+      <language srow="78" scol="0" erow="78" ecol="8">Gradient</language>
+      <language srow="78" scol="8" erow="78" ecol="16"> Descent</language>
+      :
+      
+
+      <language srow="79" scol="0" erow="79" ecol="3">The</language>
+      <language srow="79" scol="3" erow="79" ecol="10"> update</language>
+      <language srow="79" scol="10" erow="79" ecol="15"> rule</language>
+      <language srow="79" scol="15" erow="79" ecol="19"> for</language>
+      <language srow="79" scol="19" erow="79" ecol="28"> gradient</language>
+      <language srow="79" scol="28" erow="79" ecol="36"> descent</language>
+      <language srow="79" scol="36" erow="79" ecol="39"> is</language>
+      :
+      
+
+      
+
+    </ERROR>
+    <block srow="81" scol="0" erow="84" ecol="0">
+      <code_block srow="81" scol="0" erow="84" ecol="0">
+        ```
+        
+
+        <code_content srow="82" scol="0" erow="83" ecol="0">θ = θ - α∇J(θ)
+</code_content>
+        ```
+        
+
+      </code_block>
+    </block>
+    <ERROR srow="84" scol="0" erow="85" ecol="5">
+      
+
+      <language srow="85" scol="0" erow="85" ecol="5">Where</language>
+    </ERROR>
+    <block srow="85" scol="5" erow="87" ecol="0">
+      <paragraph_block srow="85" scol="5" erow="87" ecol="0">
+        <paragraph_content srow="85" scol="5" erow="87" ecol="0">
+           
+          <inline_code srow="85" scol="6" erow="85" ecol="10">
+            `
+            `
+          </inline_code>
+           
+          <text srow="85" scol="11" erow="85" ecol="36">is the learning rate and </text>
+          <inline_code srow="85" scol="36" erow="85" ecol="46">
+            `
+            `
+          </inline_code>
+           
+          <text srow="85" scol="47" erow="85" ecol="63">is the gradient.</text>
+          
+
+        </paragraph_content>
+      </paragraph_block>
+    </block>
+    <block srow="87" scol="0" erow="88" ecol="0">
+      <heading srow="87" scol="0" erow="88" ecol="0">
+        <heading_marker srow="87" scol="0" erow="87" ecol="3">###</heading_marker>
+        <heading_content srow="87" scol="4" erow="87" ecol="23">
+          <text srow="87" scol="4" erow="87" ecol="23">Performance Metrics</text>
+        </heading_content>
+        
+
+      </heading>
+    </block>
+    <ERROR srow="88" scol="0" erow="90" ecol="0">
+      
+
+      <language srow="89" scol="0" erow="89" ecol="8">Accuracy</language>
+      <language srow="89" scol="8" erow="89" ecol="16"> Metrics</language>
+      :
+      
+
+    </ERROR>
+    <block srow="90" scol="0" erow="91" ecol="0">
+      <list_block srow="90" scol="0" erow="91" ecol="0">
+        <list_item srow="90" scol="0" erow="91" ecol="0">
+          <list_marker srow="90" scol="0" erow="90" ecol="1">
+            -
+          </list_marker>
+          <list_item_content srow="90" scol="2" erow="91" ecol="0">
+            <formatted_text srow="90" scol="2" erow="90" ecol="15">
+              <bold srow="90" scol="2" erow="90" ecol="15">
+                **
+                <text srow="90" scol="4" erow="90" ecol="13">Precision</text>
+                **
+              </bold>
+            </formatted_text>
+            <text srow="90" scol="15" erow="90" ecol="68">: True Positives / (True Positives + False Positives)</text>
+            
+
+          </list_item_content>
+        </list_item>
+      </list_block>
+    </block>
+    <block srow="91" scol="0" erow="92" ecol="0">
+      <list_block srow="91" scol="0" erow="92" ecol="0">
+        <list_item srow="91" scol="0" erow="92" ecol="0">
+          <list_marker srow="91" scol="0" erow="91" ecol="1">
+            -
+          </list_marker>
+          <list_item_content srow="91" scol="2" erow="92" ecol="0">
+            <formatted_text srow="91" scol="2" erow="91" ecol="12">
+              <bold srow="91" scol="2" erow="91" ecol="12">
+                **
+                <text srow="91" scol="4" erow="91" ecol="10">Recall</text>
+                **
+              </bold>
+            </formatted_text>
+            <text srow="91" scol="12" erow="91" ecol="65">: True Positives / (True Positives + False Negatives)</text>
+            
+
+          </list_item_content>
+        </list_item>
+      </list_block>
+    </block>
+    <block srow="92" scol="0" erow="93" ecol="0">
+      <list_block srow="92" scol="0" erow="93" ecol="0">
+        <list_item srow="92" scol="0" erow="93" ecol="0">
+          <list_marker srow="92" scol="0" erow="92" ecol="1">
+            -
+          </list_marker>
+          <list_item_content srow="92" scol="2" erow="93" ecol="0">
+            <formatted_text srow="92" scol="2" erow="92" ecol="12">
+              <italic srow="92" scol="2" erow="92" ecol="12">
+                *
+                <text srow="92" scol="3" erow="92" ecol="11">F1-Score</text>
+                *
+              </italic>
+            </formatted_text>
+            <text srow="92" scol="12" erow="92" ecol="51">: Harmonic mean of precision and recall</text>
+            
+
+          </list_item_content>
+        </list_item>
+      </list_block>
+    </block>
+    <ERROR srow="93" scol="0" erow="94" ecol="0">
+      
+
+    </ERROR>
+    <block srow="94" scol="0" erow="95" ecol="0">
+      <heading srow="94" scol="0" erow="95" ecol="0">
+        <heading_marker srow="94" scol="0" erow="94" ecol="2">##</heading_marker>
+        <heading_content srow="94" scol="3" erow="94" ecol="13">
+          <text srow="94" scol="3" erow="94" ecol="13">Conclusion</text>
+        </heading_content>
+        
+
+      </heading>
+    </block>
+    <ERROR srow="95" scol="0" erow="96" ecol="60">
+      
+
+      <language srow="96" scol="0" erow="96" ecol="7">Machine</language>
+      <language srow="96" scol="7" erow="96" ecol="16"> learning</language>
+      <language srow="96" scol="16" erow="96" ecol="19"> is</language>
+      <language srow="96" scol="19" erow="96" ecol="32"> transforming</language>
+      <language srow="96" scol="32" erow="96" ecol="36"> how</language>
+      <language srow="96" scol="36" erow="96" ecol="39"> we</language>
+      <language srow="96" scol="39" erow="96" ecol="45"> solve</language>
+      <language srow="96" scol="45" erow="96" ecol="54"> problems</language>
+      <ERROR srow="96" scol="54" erow="96" ecol="55">.</ERROR>
+      <language srow="96" scol="55" erow="96" ecol="60"> From</language>
+    </ERROR>
+    <block srow="96" scol="60" erow="98" ecol="0">
+      <paragraph_block srow="96" scol="60" erow="98" ecol="0">
+        <paragraph_content srow="96" scol="60" erow="98" ecol="0">
+           
+          <link srow="96" scol="61" erow="96" ecol="78">
+            <zortex_link srow="96" scol="61" erow="96" ecol="78">
+              [
+              <link_text srow="96" scol="62" erow="96" ecol="77">Computer Vision</link_text>
+              ]
+            </zortex_link>
+          </link>
+           
+          <text srow="96" scol="79" erow="96" ecol="82">to </text>
+          <link srow="96" scol="82" erow="96" ecol="111">
+            <zortex_link srow="96" scol="82" erow="96" ecol="111">
+              [
+              <link_text srow="96" scol="83" erow="96" ecol="110">Natural Language Processing</link_text>
+              ]
+            </zortex_link>
+          </link>
+          <text srow="96" scol="111" erow="96" ecol="142">, ML techniques are everywhere.</text>
+          
+
+        </paragraph_content>
+      </paragraph_block>
+    </block>
+    <block srow="98" scol="0" erow="99" ecol="0">
+      <label_block srow="98" scol="0" erow="99" ecol="0">
+        <label_line srow="98" scol="0" erow="99" ecol="0">
+          :
+          
+
+        </label_line>
+      </label_block>
+    </block>
+    <ERROR srow="99" scol="0" erow="103" ecol="76">
+      
+
+      <language srow="100" scol="2" erow="100" ecol="13"> Understand</language>
+      <language srow="100" scol="13" erow="100" ecol="18"> your</language>
+      <language srow="100" scol="18" erow="100" ecol="23"> data</language>
+      
+
+      <language srow="101" scol="2" erow="101" ecol="10"> Iterate</language>
+      <language srow="101" scol="10" erow="101" ecol="14"> and</language>
+      <language srow="101" scol="14" erow="101" ecol="22"> improve</language>
+      
+
+      
+
+      <ERROR srow="103" scol="0" erow="103" ecol="3">&gt; "</ERROR>
+      <language srow="103" scol="3" erow="103" ecol="6">The</language>
+      <language srow="103" scol="6" erow="103" ecol="11"> goal</language>
+      <language srow="103" scol="11" erow="103" ecol="14"> is</language>
+      <language srow="103" scol="14" erow="103" ecol="17"> to</language>
+      <language srow="103" scol="17" erow="103" ecol="22"> turn</language>
+      <language srow="103" scol="22" erow="103" ecol="27"> data</language>
+      <language srow="103" scol="27" erow="103" ecol="32"> into</language>
+      <language srow="103" scol="32" erow="103" ecol="44"> information</language>
+      <ERROR srow="103" scol="44" erow="103" ecol="45">,</ERROR>
+      <language srow="103" scol="45" erow="103" ecol="49"> and</language>
+      <language srow="103" scol="49" erow="103" ecol="61"> information</language>
+      <language srow="103" scol="61" erow="103" ecol="66"> into</language>
+      <language srow="103" scol="66" erow="103" ecol="74"> insight</language>
+      <ERROR srow="103" scol="74" erow="103" ecol="76">."</ERROR>
+    </ERROR>
+    <block srow="103" scol="76" erow="105" ecol="0">
+      <paragraph_block srow="103" scol="76" erow="105" ecol="0">
+        <paragraph_content srow="103" scol="76" erow="105" ecol="0">
+           
+          <text srow="103" scol="77" erow="103" ecol="92">- Carly Fiorina</text>
+          
+
+        </paragraph_content>
+      </paragraph_block>
+    </block>
+    <block srow="105" scol="0" erow="106" ecol="0">
+      <paragraph_block srow="105" scol="0" erow="106" ecol="0">
+        <paragraph_content srow="105" scol="0" erow="106" ecol="0">
+          <text srow="105" scol="0" erow="105" ecol="28">@@Deep Learning Fundamentals</text>
+          
+
+        </paragraph_content>
+      </paragraph_block>
+    </block>
+    <block srow="106" scol="0" erow="107" ecol="0">
+      <paragraph_block srow="106" scol="0" erow="107" ecol="0">
+        <paragraph_content srow="106" scol="0" erow="107" ecol="0">
+          <text srow="106" scol="0" erow="106" ecol="16">@neural-networks</text>
+          
+
+        </paragraph_content>
+      </paragraph_block>
+    </block>
+    <block srow="107" scol="0" erow="109" ecol="0">
+      <paragraph_block srow="107" scol="0" erow="109" ecol="0">
+        <paragraph_content srow="107" scol="0" erow="109" ecol="0">
+          <text srow="107" scol="0" erow="107" ecol="14">@deep-learning</text>
+          
+
+        </paragraph_content>
+      </paragraph_block>
+    </block>
+    <block srow="109" scol="0" erow="110" ecol="0">
+      <heading srow="109" scol="0" erow="110" ecol="0">
+        <heading_marker srow="109" scol="0" erow="109" ecol="1">#</heading_marker>
+        <heading_content srow="109" scol="2" erow="109" ecol="24">
+          <text srow="109" scol="2" erow="109" ecol="24">Deep Learning Overview</text>
+        </heading_content>
+        
+
+      </heading>
+    </block>
+    <ERROR srow="110" scol="0" erow="111" ecol="21">
+      
+
+      <language srow="111" scol="0" erow="111" ecol="4">Deep</language>
+      <language srow="111" scol="4" erow="111" ecol="13"> learning</language>
+      <language srow="111" scol="13" erow="111" ecol="21"> extends</language>
+    </ERROR>
+    <block srow="111" scol="21" erow="112" ecol="0">
+      <paragraph_block srow="111" scol="21" erow="112" ecol="0">
+        <paragraph_content srow="111" scol="21" erow="112" ecol="0">
+           
+          <link srow="111" scol="22" erow="111" ecol="53">
+            <zortex_link srow="111" scol="22" erow="111" ecol="53">
+              [
+              <link_text srow="111" scol="23" erow="111" ecol="52">Machine Learning Fundamentals</link_text>
+              ]
+            </zortex_link>
+          </link>
+           
+          <text srow="111" scol="54" erow="111" ecol="100">by using neural networks with multiple layers.</text>
+          
+
+        </paragraph_content>
+      </paragraph_block>
+    </block>
+  </body>
+</document>
+test.zortex	   0.58 ms	  5044 bytes/ms	(ERROR [5, 0] - [6, 0])

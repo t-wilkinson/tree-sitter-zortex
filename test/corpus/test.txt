@@ -73,13 +73,18 @@ Headings
           (text))))))
 
 ==================
-Labels
+Label Blocks
 ==================
 @@Article
 @tag
 
 Introduction:
+This is content under the introduction label.
+It can span multiple lines.
+
 Methodology:
+- Step 1
+- Step 2
 ---
 
 (document
@@ -91,14 +96,36 @@ Methodology:
       (tag_name)))
   (body
     (block
-      (label
-        (label_name)))
+      (label_block
+        (label_line)
+        (indent)
+        (label_content
+          (block
+            (paragraph_block
+              (paragraph_content
+                (text)
+                (text)
+                (text)))))
+        (dedent)))
     (block
-      (label
-        (label_name)))))
+      (label_block
+        (label_line)
+        (indent)
+        (label_content
+          (block
+            (list_block
+              (list_item
+                (list_marker)
+                (list_item_content
+                  (text)))
+              (list_item
+                (list_marker)
+                (list_item_content
+                  (text))))))
+        (dedent)))))
 
 ==================
-Lists
+Nested Lists
 ==================
 @@Article
 - Item 1
@@ -117,38 +144,41 @@ Lists
       (article_name)))
   (body
     (block
-      (list
+      (list_block
         (list_item
           (list_marker)
-          (list_content
+          (list_item_content
             (text)))
         (list_item
           (list_marker)
-          (list_content
-            (text)))
-        (nested_list_item
-          (list_item
-            (list_marker)
-            (list_content
-              (text))))
-        (nested_list_item
-          (list_item
-            (list_marker)
-            (list_content
-              (text))))
+          (list_item_content
+            (text))
+          (indent)
+          (list_nested_content
+            (block
+              (list_block
+                (list_item
+                  (list_marker)
+                  (list_item_content
+                    (text)))
+                (list_item
+                  (list_marker)
+                  (list_item_content
+                    (text))))))
+          (dedent))
         (list_item
           (list_marker)
-          (list_content
+          (list_item_content
             (text)))))
     (block
-      (list
+      (list_block
         (list_item
           (list_marker)
-          (list_content
+          (list_item_content
             (text)))
         (list_item
           (list_marker)
-          (list_content
+          (list_item_content
             (text)))))))
 
 ==================
@@ -167,24 +197,24 @@ This is ***bold italic*** text.
       (article_name)))
   (body
     (block
-      (paragraph
-        (paragraph_line
+      (paragraph_block
+        (paragraph_content
           (text)
           (formatted_text
             (bold
               (text)))
           (text))))
     (block
-      (paragraph
-        (paragraph_line
+      (paragraph_block
+        (paragraph_content
           (text)
           (formatted_text
             (italic
               (text)))
           (text))))
     (block
-      (paragraph
-        (paragraph_line
+      (paragraph_block
+        (paragraph_content
           (text)
           (formatted_text
             (bolditalic
@@ -214,13 +244,66 @@ Plain code block
     (block
       (code_block
         (language)
-        (code_content
-          (code_line)
-          (code_line))))
+        (code_content)))
     (block
       (code_block
-        (code_content
-          (code_line))))))
+        (code_content)))))
+
+==================
+Links
+==================
+@@Article
+
+[Article Name]
+[Article/#Heading]
+[Article/:Label]
+[/#Local Heading]
+[:Global Label]
+[Link text](https://example.com)
+---
+
+(document
+  (article_headers
+    (article_header
+      (article_name)))
+  (body
+    (block
+      (paragraph_block
+        (paragraph_content
+          (link
+            (zortex_link
+              (link_text))))))
+    (block
+      (paragraph_block
+        (paragraph_content
+          (link
+            (zortex_link
+              (link_text))))))
+    (block
+      (paragraph_block
+        (paragraph_content
+          (link
+            (zortex_link
+              (link_text))))))
+    (block
+      (paragraph_block
+        (paragraph_content
+          (link
+            (zortex_link
+              (link_text))))))
+    (block
+      (paragraph_block
+        (paragraph_content
+          (link
+            (zortex_link
+              (link_text))))))
+    (block
+      (paragraph_block
+        (paragraph_content
+          (link
+            (markdown_link
+              (link_text)
+              (url))))))))
 
 ==================
 LaTeX
@@ -242,28 +325,29 @@ $$
       (article_name)))
   (body
     (block
-      (paragraph
-        (paragraph_line
+      (paragraph_block
+        (paragraph_content
           (text)
           (inline_latex)
           (text))))
     (block
-      (paragraph
-        (paragraph_line
+      (paragraph_block
+        (paragraph_content
           (text))))
     (block
       (latex_block
-        (latex_content
-          (latex_line))))))
+        (latex_content)))))
 
 ==================
-Complex Paragraph
+Multi-line Paragraphs
 ==================
 @@Article
 
 This paragraph has **bold**, *italic*, `code`, and [links]. It also has
 math like $x = y$ and continues on multiple lines with various
 ***formatting*** options.
+
+Another paragraph after a blank line.
 ---
 
 (document
@@ -272,8 +356,8 @@ math like $x = y$ and continues on multiple lines with various
       (article_name)))
   (body
     (block
-      (paragraph
-        (paragraph_line
+      (paragraph_block
+        (paragraph_content
           (text)
           (formatted_text
             (bold
@@ -288,13 +372,15 @@ math like $x = y$ and continues on multiple lines with various
           (link
             (zortex_link
               (link_text)))
-          (text))
-        (paragraph_line
+          (text)
           (text)
           (inline_latex)
-          (text))
-        (paragraph_line
+          (text)
           (formatted_text
             (bolditalic
               (text)))
+          (text))))
+    (block
+      (paragraph_block
+        (paragraph_content
           (text))))))
